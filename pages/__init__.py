@@ -1,0 +1,1 @@
+# PhishGuard AI pages package
