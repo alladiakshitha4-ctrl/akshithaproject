@@ -221,10 +221,8 @@ def train_model(force=False):
     """Train ensemble model. Returns (model, scaler, metrics)."""
     os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
 
-    if not force and os.path.exists(MODEL_PATH) and os.path.exists(SCALER_PATH):
-        model = joblib.load(MODEL_PATH)
-        scaler = joblib.load(SCALER_PATH)
-        return model, scaler, None
+    # Always retrain — avoids pickle/version mismatch errors on cloud deployments
+    force = True
 
     print("Training phishing detection model...")
     df = generate_training_dataset(6000)
