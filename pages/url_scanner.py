@@ -110,7 +110,8 @@ def _display_scan_result(result, ti, user):
     """, unsafe_allow_html=True)
 
     # Three columns: Risk Factors | Features | Threat Intel
-    col1, col2, col3 = st.columns([1.2, 1, 1])
+   is_mobile = False  # Streamlit can't detect mobile, use single column layout
+    col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
         st.markdown("**🚨 Risk Factors**")

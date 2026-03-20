@@ -191,7 +191,125 @@ section[data-testid="stSidebar"] {
     color: var(--text-primary) !important;
     font-family: 'Exo 2', sans-serif !important;
 }
+/* ── Mobile Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
 
+    /* Stack all columns vertically */
+    [data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+
+    /* Sidebar auto-collapse on mobile */
+    section[data-testid="stSidebar"] {
+        width: 80vw !important;
+        min-width: 0 !important;
+    }
+
+    /* Metric boxes — 2 per row on mobile */
+    .metric-box {
+        padding: 10px 8px !important;
+    }
+    .metric-value {
+        font-size: 1.4em !important;
+    }
+    .metric-label {
+        font-size: 0.65em !important;
+    }
+
+    /* Cards full width */
+    .phish-card {
+        padding: 14px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Risk score number smaller on mobile */
+    .phish-card div[style*="3.5em"] {
+        font-size: 2.2em !important;
+    }
+
+    /* Verdict text smaller */
+    .phish-card div[style*="2.2em"] {
+        font-size: 1.4em !important;
+    }
+
+    /* Tables scroll horizontally */
+    [data-testid="stDataFrame"] {
+        overflow-x: auto !important;
+        max-width: 100vw !important;
+    }
+
+    /* Threat items wrap */
+    .threat-item > div {
+        flex-wrap: wrap !important;
+    }
+
+    /* Hide long URLs — truncate more */
+    .phish-card div[style*="word-break"] {
+        font-size: 0.75em !important;
+    }
+
+    /* Buttons full width */
+    .stButton > button {
+        width: 100% !important;
+        padding: 10px 12px !important;
+        font-size: 0.9em !important;
+    }
+
+    /* Input fields */
+    .stTextInput > div > div > input {
+        font-size: 16px !important; /* Prevents iOS zoom on focus */
+    }
+    .stTextArea > div > div > textarea {
+        font-size: 16px !important;
+    }
+
+    /* Tabs scrollable on mobile */
+    .stTabs [data-baseweb="tab-list"] {
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+    }
+    .stTabs [data-baseweb="tab"] {
+        padding: 8px 12px !important;
+        font-size: 0.8em !important;
+        white-space: nowrap !important;
+    }
+
+    /* Reduce page title size */
+    h2 { font-size: 1.3em !important; }
+    h3 { font-size: 1.1em !important; }
+
+    /* Scan history rows wrap */
+    div[style*="grid-template-columns"] {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    /* Login page padding */
+    .login-container {
+        margin: 20px auto !important;
+        padding: 24px 16px !important;
+    }
+
+    /* Plotly charts full width */
+    .js-plotly-plot {
+        max-width: 100vw !important;
+    }
+
+    /* Admin table scroll */
+    .stDataFrame {
+        font-size: 0.75em !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .metric-value { font-size: 1.2em !important; }
+    .metric-label { font-size: 0.6em !important; }
+    .phish-card { padding: 12px !important; }
+    h2 { font-size: 1.1em !important; }
+}
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }

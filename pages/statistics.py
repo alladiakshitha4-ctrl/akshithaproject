@@ -36,7 +36,7 @@ def show_statistics():
     avg_risk = sum(s.get("risk_score", 0) for s in scans) / max(total, 1)
     detection_rate = (phishing / total * 100) if total else 0
 
-    cols = st.columns(4)
+    cols = st.columns(2)
     metrics = [
         ("Total Scans", total, "#00d4aa", "🔍"),
         ("Phishing Caught", phishing, "#ff3860", "🚨"),
@@ -56,7 +56,7 @@ def show_statistics():
     st.markdown("<br>", unsafe_allow_html=True)
 
     # ── Charts Row 1 ───────────────────────────────────────────────────────────
-    col1, col2 = st.columns(2)
+col1, col2 = st.columns([1, 1])
 
     with col1:
         # Verdict pie chart
@@ -184,7 +184,7 @@ def show_statistics():
         "training_samples": 6000, "features": 22,
     }
 
-    col_a, col_b, col_c, col_d = st.columns(4)
+  col_a, col_b, col_c, col_d = st.columns(2)
     for col, label, val, color in [
         (col_a, "Accuracy", f"{metrics_data['accuracy']}%", "#00e676"),
         (col_b, "Precision", f"{metrics_data['precision']}%", "#00d4aa"),
