@@ -331,14 +331,14 @@ def show_auth_page():
 
 
 def show_main_app():
-    from pages.url_scanner import show_url_scanner
-    from pages.email_detector import show_email_detector
-    from pages.scan_history import show_scan_history
-    from pages.statistics import show_statistics
-    from pages.threat_feed import show_threat_feed
-    from pages.reporting import show_reporting
-    from pages.admin import show_admin
-    from pages.settings import show_settings
+    from modules.url_scanner import show_url_scanner
+    from modules.email_detector import show_email_detector
+    from modules.scan_history import show_scan_history
+    from modules.statistics import show_statistics
+    from modules.threat_feed import show_threat_feed
+    from modules.reporting import show_reporting
+    from modules.admin import show_admin
+    from modules.settings import show_settings
 
     user = st.session_state["user"]
     is_admin = user.get("role") == "admin"
